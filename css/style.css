@@ -1,0 +1,255 @@
+
+/* *********************
+	**  ==Navigation   **
+************************* */
+
+.navbar-nav li a{
+	border-left: 1px solid #ddd;
+}
+.navbar-nav li a span:nth-child(2){
+	position: relative;
+	top: -8px;
+	right: 5px;
+}
+#sidebar_hamburger img{
+	position: absolute;
+	top: 9px;
+	left: 10px;
+	display: inline;
+}
+
+/* *********************
+	**  ==Navigation Dropdowns   **
+************************* */
+.dropdown-menu{
+	padding: 0px;
+	min-width: 250px;
+}
+.dropdown-menu .divider{
+	margin: 0px;
+}
+
+/*Message DropDown*/
+.message-container{
+	min-width: 320px;
+	padding: 12px;
+}
+#message-dropdown .header{
+	padding: 8px;
+}
+.navbar-nav .message-container-wrapper{
+	height: 200px;
+	overflow: scroll;
+}
+.navbar-nav .message-container{
+	padding: 5px;
+}
+.navbar-nav .message-container img{
+	margin-right: 5px;
+}
+.navbar-nav .message-container a{
+	color: #333;
+	border-left: none;
+	text-decoration: none;
+}
+.navbar-nav .message-container:hover{
+	background-color: #eee;
+}
+.message-see-all{
+	margin: 8px;
+}
+.navbar-nav .message-see-all a{
+	color: #333;
+	border-left: none;
+}
+
+
+/*Notification DropDown*/
+#notification-dropdown .header{
+	padding: 8px;
+}
+.navbar-nav .notification-container a div{
+	padding: 12px;
+}
+.navbar-nav .notification-container a{
+	color: #333;
+	border-left: none;
+	font-weight: bold;
+	text-decoration: none;
+}
+.navbar-nav .notification-container:hover{
+	background-color: #eee;
+}
+/*.navbar-nav .notification-container:hover a{
+	color: #fff;
+}*/
+.notification-view-all{
+	margin: 8px;
+}
+.navbar-nav .notification-view-all a{
+	color: #333;
+	border-left: none;
+}
+
+
+
+
+/*User DropDown*/
+.user-menu .user-body div{
+	margin: 8px;
+}
+.user-menu .user-header{
+	padding: 5px;
+	color: #fff;
+	background-color: #195e9a;
+}
+.user-menu .user-header p{
+	font-size: 16px;
+}
+.user-menu .user-header img{
+	border: 2px solid #fff;
+	margin: 8px;
+
+}
+.user-menu .user-header small{
+	display: block;
+}
+
+
+
+
+/* *********************
+	**  ==Main Wrapper   **
+************************* */
+
+.main-wrapper{
+	padding-top: 50px;
+	height: 100%;
+	width: 100%;
+}
+
+/* *********************
+	**  ==SideBar   **
+************************* */
+.side-bar{
+	z-index: 1;
+	position: absolute;
+	height: 100%;
+	width: 250px;
+	left: 0px;
+	background: #f8f8f8;
+	position: fixed;
+	-webkit-transition: all 0.4s linear;
+	-moz-transition: all 0.4s linear;
+	-ms-transition: all 0.4s linear;
+	-o-transition: all 0.4s linear;
+	transition: all 0.4s linear;
+	
+}
+
+.user-panel{
+	padding: 8px 5px 15px 8px;
+	border-bottom: 1px solid #eee ;
+}
+.user-panel .info{
+	display: inline-block;
+	padding-left: 10px;
+}
+
+.sidebar-form{
+	padding: 12px 8px 8px 8px;
+}
+.sidebar-form .input-group{
+	opacity: 0.6;
+}
+.sidebar-form .input-group:hover{
+	opacity: 1;
+}
+.sidebar-form .input-group:focus{
+	opacity: 1;
+}
+
+
+.side-links{
+	padding: 0;
+	list-style: none;
+	margin-top: 5px;
+}
+.side-links li{
+	text-indent: 10px;
+	line-height: 40px;
+	border-bottom: 1px solid #ddd ;
+}
+.side-links li:nth-child(1){
+	border-top: 1px solid #ddd ;
+}
+.side-links li a{
+	display: block;
+	text-decoration: none;
+	color: #444;
+}
+.side-links li a:hover{
+	background-color: #ddd;
+}
+/*
+ *********************
+	**  ==Content   **
+/************************** */
+.content{
+	width: 100%;
+	height: 100%;
+	position: absolute;
+	padding: 15px 15px 15px 265px;
+	-webkit-transition: all 0.4s linear;
+	-moz-transition: all 0.4s linear;
+	-ms-transition: all 0.4s linear;
+	-o-transition: all 0.4s linear;
+	transition: all 0.4s linear;
+}
+/* *********************
+	**  ==SideBar Toggle   **
+************************* */
+.main-wrapper.sidebarDisplayed .side-bar{
+	left: -250px;
+}
+.main-wrapper.sidebarDisplayed .content{
+	padding: 15px;
+}
+
+
+
+
+
+
+/* *********************
+	**  ==Media Queries   **
+************************* */
+@media screen and (max-width: 768px){
+	/*NavBar links*/
+	.navbar-nav{
+		margin: 0px -15px;
+	}
+	.navbar-nav li{
+		border-bottom: 1px solid #ddd ;
+	}
+
+	.navbar-nav li:last-child{
+		border-bottom: none ;
+	}
+	
+	/*SideBar Toggling*/
+	.side-bar{
+		left: -200px;
+		width: 200px;
+	}
+	.content{
+		padding: 15px;
+	}
+	.main-wrapper.sidebarDisplayed .side-bar{
+		left: 0px;
+	}
+	.main-wrapper.sidebarDisplayed .content{
+		padding: 15px 15px 15px 215px;
+		overflow-y: hidden;
+	}
+}

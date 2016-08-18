@@ -1,3 +1,6 @@
+.colr-blue{
+	color: #195e9a;
+}
 
 /* *********************
 	**  ==Navigation   **
@@ -39,10 +42,10 @@
 }
 .navbar-nav .message-container-wrapper{
 	height: 200px;
-	overflow: scroll;
+	overflow-y: scroll;
 }
 .navbar-nav .message-container{
-	padding: 5px;
+	padding: 1px 5px;
 }
 .navbar-nav .message-container img{
 	margin-right: 5px;
@@ -65,6 +68,11 @@
 
 
 /*Notification DropDown*/
+.navbar-nav .notification-container-wrapper{
+	height: 120px;
+	overflow-y: scroll;
+}
+
 #notification-dropdown .header{
 	padding: 8px;
 }
@@ -74,15 +82,11 @@
 .navbar-nav .notification-container a{
 	color: #333;
 	border-left: none;
-	font-weight: bold;
 	text-decoration: none;
 }
 .navbar-nav .notification-container:hover{
 	background-color: #eee;
 }
-/*.navbar-nav .notification-container:hover a{
-	color: #fff;
-}*/
 .notification-view-all{
 	margin: 8px;
 }
@@ -92,6 +96,32 @@
 }
 
 
+/*Task DropDown*/
+.navbar-nav .task-container-wrapper{
+	height: 120px;
+	overflow-y: scroll;
+}
+#task-dropdown .header{
+	padding: 8px;
+}
+.navbar-nav .task-container a div{
+	padding: 12px;
+}
+.navbar-nav .task-container a{
+	color: #333;
+	border-left: none;
+	text-decoration: none;
+}
+.navbar-nav .task-container:hover{
+	background-color: #eee;
+}
+.task-view-all{
+	margin: 8px;
+}
+.navbar-nav .task-view-all a{
+	color: #333;
+	border-left: none;
+}
 
 
 /*User DropDown*/

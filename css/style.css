@@ -1,5 +1,20 @@
 .colr-blue{
-	color: #195e9a;
+    color: #fff;
+    background: #428bca;
+}
+.colr-red{
+    color: #fff;
+    background: #F44336;
+}
+.color-green{
+	color: #2d2;
+}
+
+.color-white{
+	color: #fff;
+}
+.cBlue{
+	background-color: #0c54ee;
 }
 
 /* *********************
@@ -14,12 +29,15 @@
 	top: -8px;
 	right: 5px;
 }
-#sidebar_hamburger img{
-	position: absolute;
-	top: 9px;
-	left: 10px;
-	display: inline;
-}
+/*#sidebar_hamburger img{*/
+	/*opacity: 0.7;*/
+	/*border: 1px solid #ccc;*/
+	/*border-radius: 5px;*/
+	/*padding:1px;*/
+	/*position: absolute;*/
+	/*top: 6px;*/
+	/*left: 10px;*/
+/*}*/
 
 /* *********************
 	**  ==Navigation Dropdowns   **
@@ -165,9 +183,11 @@
 	z-index: 1;
 	position: absolute;
 	height: 100%;
-	width: 250px;
+	width: 230px;
 	left: 0px;
-	background: #f8f8f8;
+	/*background: #f8f8f8;*/
+	background: #496477;
+	color: #eee;
 	position: fixed;
 	-webkit-transition: all 0.4s linear;
 	-moz-transition: all 0.4s linear;
@@ -190,14 +210,17 @@
 	padding: 12px 8px 8px 8px;
 }
 .sidebar-form .input-group{
-	opacity: 0.6;
+	opacity: 0.8;
 }
+
+.sidebar-form.opacity1 .input-group{
+	opacity: 1;
+}
+
 .sidebar-form .input-group:hover{
 	opacity: 1;
 }
-.sidebar-form .input-group:focus{
-	opacity: 1;
-}
+
 
 
 .side-links{
@@ -216,10 +239,10 @@
 .side-links li a{
 	display: block;
 	text-decoration: none;
-	color: #444;
+	color: #fff;
 }
 .side-links li a:hover{
-	background-color: #ddd;
+	background-color: #101010;
 }
 /*
  *********************
@@ -229,13 +252,51 @@
 	width: 100%;
 	height: 100%;
 	position: absolute;
-	padding: 15px 15px 15px 265px;
+	padding: 15px 15px 15px 245px;
+	background-color: #ecf0f5;
 	-webkit-transition: all 0.4s linear;
 	-moz-transition: all 0.4s linear;
 	-ms-transition: all 0.4s linear;
 	-o-transition: all 0.4s linear;
 	transition: all 0.4s linear;
 }
+
+.content .info-box .traffic,.likes,.members{
+	height: 110px;
+	background-color: #fff;
+	border-radius: 3px;
+	position: relative;
+}
+.content .info-box .info-box-icon1,.info-box-icon2,.info-box-icon3{
+	width: 100px;
+	height: 100%;
+	border-radius: 3px 0px 0px 3px;
+	float: left;
+	margin-right: 10px;
+}
+.content .info-box .info-box-icon1{
+	background: #f39c12;
+}
+.content .info-box .info-box-icon2{
+	background: #dd4b39;
+}
+.content .info-box .info-box-icon3{
+	background: #00a65a;
+}
+.content .info-box .info-box-icon1 i,.info-box-icon2 i,.info-box-icon3 i{
+	color: #fff;
+	text-align: center;
+	position: relative;
+	margin: 30px;
+}
+
+.content .info-box .info-box-details h4{
+	margin-top: 0px;
+	margin-bottom: 0px;
+	padding-top: 10px;
+}
+
+
 /* *********************
 	**  ==SideBar Toggle   **
 ************************* */
@@ -247,6 +308,112 @@
 }
 
 
+/*Dashboard Template*/
+.dashboard-visitors .panel{
+	margin-top: 20px;
+	border-top: 3px solid #f39c12;
+}
+
+.dashboard-visitors .panel-body{
+	padding-top: 0px;
+	padding-bottom: 0px;
+}
+
+.dashboard-visitors .analytics{
+	background: #f39c12;
+}
+.dashboard-visitors .ana{
+	text-align: center;
+	margin: 25px 0px 25px 0px;
+}
+.dashboard-visitors p{
+	color: #fff;
+	font-size: 18px;
+	padding: 0px;
+	margin: 0px;
+}
+
+.dashboard-visitors p.ana-value{
+	font-weight: bold;
+}
+
+
+
+/*User Template*/
+.user-content .row{
+	/*padding-left: 45px;*/
+	text-align: center;
+}
+
+.user-content .row div{
+	margin-bottom: 16px;
+}
+
+.user-content .panel{
+	border-top: 3px solid #d9534f;
+}
+
+.panel-default>.panel-heading {
+	background-color: #fff;
+}
+
+.user-content .panel-title{
+	color: #555;
+	margin: 8px 0px;
+}
+
+.user-content .img-circle{
+	max-width: 95px;
+	max-height: 95px;
+	margin-bottom: 8px;
+}
+.user-content a{
+	color: #333;
+}
+
+.pager li>a, .pager li>span {
+	color: #333;
+}
+
+.user-content a:hover,.user-content a:link{
+	text-decoration: none;
+}
+
+.user-content p{
+	font-weight: bold;
+	margin-bottom: 0px;
+	font-size: 12px;
+}
+
+.user-content small{
+	font-size: 11px;
+	color: #496477;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -254,6 +421,17 @@
 /* *********************
 	**  ==Media Queries   **
 ************************* */
+@media screen and (max-width: 992px){
+	.content .info-box .info-box-icon1,.info-box-icon2,.info-box-icon3{
+		width: 58px;
+		margin-right: 3px;
+	}
+	.content .info-box .info-box-icon1 i,.info-box-icon2 i,.info-box-icon3 i{
+		margin: 30px 8px;
+	}
+
+}
+
 @media screen and (max-width: 768px){
 	/*NavBar links*/
 	.navbar-nav{
@@ -265,6 +443,11 @@
 
 	.navbar-nav li:last-child{
 		border-bottom: none ;
+	}
+
+	/*Make the dropdown menus background white*/
+	#message-dropdown,#notification-dropdown,#task-dropdown{
+		background: #fff;
 	}
 	
 	/*SideBar Toggling*/
@@ -279,7 +462,18 @@
 		left: 0px;
 	}
 	.main-wrapper.sidebarDisplayed .content{
-		padding: 15px 15px 15px 215px;
+		/*padding: 15px 15px 15px 215px;*/
 		overflow-y: hidden;
+	}
+
+	.content .info-box .traffic,.likes,.members{
+		margin-bottom: 8px;
+	}
+	.content .info-box .info-box-icon1,.info-box-icon2,.info-box-icon3{
+		width: 100px;
+		margin-right: 10px;
+	}
+	.content .info-box .info-box-icon1 i,.info-box-icon2 i,.info-box-icon3 i {
+		margin: 30px;
 	}
 }

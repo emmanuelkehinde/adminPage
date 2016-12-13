@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" ng-app="adminPanel">
 <head>
 	<title>Admin Page</title>
 
@@ -12,309 +12,285 @@
 
 </head>
 <body>
-	<nav class="navbar navbar-default navbar-fixed-top">
-	  <div class="container-fluid">
-	    <!-- Navbar hbeader has the Company name and hamburger for sidebar -->
-	    <div class="navbar-header">
-	      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar-collapse" aria-expanded="false">
-	        <span class="sr-only">Toggle navigation</span>
-	        <span class="icon-bar"></span>
-	        <span class="icon-bar"></span>
-	        <span class="icon-bar"></span>
-	      </button>
-	      <a href="#" id="sidebar_hamburger" class="navbar-brand">
-	      	<img src="img/hamburger.png" alt="">
-	      </a>
-	      <a class="navbar-brand" href="#">&nbsp;Admin</a>
-	    </div>
 
-	    <!-- Collect the nav links, forms, and other content for toggling -->
-	    <div class="collapse navbar-collapse" id="navbar-collapse">
-	      <ul class="nav navbar-nav navbar-right">
-	      	<!-- Messages -->
-				<li class="dropdown message-menu">
-					<a href="#" class="dropdown-toggle" data-toggle="dropdown" data-target="message-dropdown">
-						<i class="fa fa-envelope-o"></i>
-						<span class="label label-success">5</span>
-					</a>
-					<!-- Messages Drop-Down -->
-					<ul class="dropdown-menu" id="message-dropdown">
-						<div class="header">You have 5 messages</div>
-						<li class="divider" role="separator"></li>
-					<!-- The message container -->
-						<div class="message-container-wrapper">
-							<div class="message-container">
-								<a href="#" >
-									<div class="">
-										<!-- User Image -->
-										<img src="img/team2_48.jpg" alt="User Image" class="img-circle pull-left">
-									</div>
-									<!-- Message Title and Time -->
-									<div class="message">
-										<h4>Message Title<small class="pull-right text-success"><i class="fa fa-clock-o"></i> 5 mins</small></h4>
-										<!-- Message -->
-										<p>This is the message you received</p>
-									</div>
-								</a>
-							</div>
-							<li class="divider" role="separator"></li>
-							<div class="message-container">
-								<a href="#" class="message">
-									<div class="">
-										<!-- User Image -->
-										<img src="img/team2_48.jpg" alt="User Image" class="img-circle pull-left">
-									</div>
-									<!-- Message Title and Time -->
-									<div>
-										<h4>Message Title<small class="pull-right text-success"><i class="fa fa-clock-o"></i> 5 mins</small></h4>
-										<!-- Message -->
-										<p>This is the message you received</p>
-									</div>
-								</a>
-							</div>
-							<li class="divider" role="separator"></li>
-							<div class="message-container">
-								<a href="#" class="message">
-									<div class="">
-										<!-- User Image -->
-										<img src="img/team2_48.jpg" alt="User Image" class="img-circle pull-left">
-									</div>
-									<!-- Message Title and Time -->
-									<div>
-										<h4>Message Title<small class="pull-right text-success"><i class="fa fa-clock-o"></i> 5 mins</small></h4>
-										<!-- Message -->
-										<p>This is the message you received</p>
-									</div>
-								</a>
-							</div>
-							<li class="divider" role="separator"></li>
-							<div class="message-container">
-								<a href="#" class="message">
-									<div class="">
-										<!-- User Image -->
-										<img src="img/team2_48.jpg" alt="User Image" class="img-circle pull-left">
-									</div>
-									<!-- Message Title and Time -->
-									<div>
-										<h4>Message Title<small class="pull-right text-success"><i class="fa fa-clock-o"></i> 5 mins</small></h4>
-										<!-- Message -->
-										<p>This is the message you received</p>
-									</div>
-								</a>
-							</div>
-							<li class="divider" role="separator"></li>
-							<div class="message-container">
-								<a href="#" class="message">
-									<div class="">
-										<!-- User Image -->
-										<img src="img/team2_48.jpg" alt="User Image" class="img-circle pull-left">
-									</div>
-									<!-- Message Title and Time -->
-									<div>
-										<h4>Message Title<small class="pull-right text-success"><i class="fa fa-clock-o"></i> 5 mins</small></h4>
-										<!-- Message -->
-										<p>This is the message you received</p>
-									</div>
-								</a>
-							</div>
-						</div>
+    <!-- Navs -->
+    <nav class="navbar navbar-inverse navbar-fixed-top" ng-controller="navCtrl">
+        <div class="container-fluid">
+            <!-- Navbar hbeader has the Company name and hamburger for sidebar -->
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar-collapse" aria-expanded="false">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <a href="" id="sidebar_hamburger" ng-click="toggleSidebar()" class="navbar-brand">
+                    <!--<img src="img/hamburger.png" alt="">-->
+                    <i class="fa fa-bars"></i>
+                </a>
+                <a class="navbar-brand" href="#">Admin</a>
+            </div>
 
-						<li class="divider" role="separator"></li>
-						<div class="text-center message-see-all"><a href="#">See All Messages</a></div>
-					</ul><!--end Message Menu-->
-				</li> <!--end Message-->
+            <!-- Collect the nav links, forms, and other content for toggling -->
+            <div class="collapse navbar-collapse" id="navbar-collapse">
+                <ul class="nav navbar-nav navbar-right">
+                    <!-- Messages -->
+                    <li class="dropdown message-menu">
+                        <a href="" class="dropdown-toggle" data-toggle="dropdown" data-target="message-dropdown">
+                            <i class="fa fa-envelope-o"></i>
+                            <span class="label label-success">5</span>
+                        </a>
+                        <!-- Messages Drop-Down -->
+                        <ul class="dropdown-menu" id="message-dropdown">
+                            <div class="header">You have 5 messages</div>
+                            <li class="divider" role="separator"></li>
+                            <!-- The message container -->
+                            <div class="message-container-wrapper">
+                                <div class="message-container">
+                                    <a href="#/mail" >
+                                        <div class="">
+                                            <!-- User Image -->
+                                            <img src="img/team2_48.jpg" alt="User Image" class="img-circle pull-left">
+                                        </div>
+                                        <!-- Message Title and Time -->
+                                        <div class="message">
+                                            <h4>Message Title<small class="pull-right text-success"><i class="fa fa-clock-o"></i> 5 mins</small></h4>
+                                            <!-- Message -->
+                                            <p>This is the message you received</p>
+                                        </div>
+                                    </a>
+                                </div>
+                                <li class="divider" role="separator"></li>
+                                <div class="message-container">
+                                    <a href="#/mail" class="message">
+                                        <div class="">
+                                            <!-- User Image -->
+                                            <img src="img/team2_48.jpg" alt="User Image" class="img-circle pull-left">
+                                        </div>
+                                        <!-- Message Title and Time -->
+                                        <div>
+                                            <h4>Message Title<small class="pull-right text-success"><i class="fa fa-clock-o"></i> 5 mins</small></h4>
+                                            <!-- Message -->
+                                            <p>This is the message you received</p>
+                                        </div>
+                                    </a>
+                                </div>
+                                <li class="divider" role="separator"></li>
+                                <div class="message-container">
+                                    <a href="#/mail" class="message">
+                                        <div class="">
+                                            <!-- User Image -->
+                                            <img src="img/team2_48.jpg" alt="User Image" class="img-circle pull-left">
+                                        </div>
+                                        <!-- Message Title and Time -->
+                                        <div>
+                                            <h4>Message Title<small class="pull-right text-success"><i class="fa fa-clock-o"></i> 5 mins</small></h4>
+                                            <!-- Message -->
+                                            <p>This is the message you received</p>
+                                        </div>
+                                    </a>
+                                </div>
+                                <li class="divider" role="separator"></li>
+                                <div class="message-container">
+                                    <a href="#/mail" class="message">
+                                        <div class="">
+                                            <!-- User Image -->
+                                            <img src="img/team2_48.jpg" alt="User Image" class="img-circle pull-left">
+                                        </div>
+                                        <!-- Message Title and Time -->
+                                        <div>
+                                            <h4>Message Title<small class="pull-right text-success"><i class="fa fa-clock-o"></i> 5 mins</small></h4>
+                                            <!-- Message -->
+                                            <p>This is the message you received</p>
+                                        </div>
+                                    </a>
+                                </div>
+                                <li class="divider" role="separator"></li>
+                                <div class="message-container">
+                                    <a href="#/mail" class="message">
+                                        <div class="">
+                                            <!-- User Image -->
+                                            <img src="img/team2_48.jpg" alt="User Image" class="img-circle pull-left">
+                                        </div>
+                                        <!-- Message Title and Time -->
+                                        <div>
+                                            <h4>Message Title<small class="pull-right text-success"><i class="fa fa-clock-o"></i> 5 mins</small></h4>
+                                            <!-- Message -->
+                                            <p>This is the message you received</p>
+                                        </div>
+                                    </a>
+                                </div>
+                            </div>
 
-				<!-- Notification Menu -->
-				<li class="dropdown notification-menu">
-					<a href="#" class="dropdown-toggle" data-toggle="dropdown" data-target="notification-dropdown">
-						<i class="fa fa-bell-o"></i>
-						<span class="label label-warning">12</span>
-					</a>
-					<!-- Notification Drop-Down -->
-					<ul class="dropdown-menu" id="notification-dropdown">
-						<div class="header">You have 12 notifications</div>
-						<li class="divider" role="separator"></li>	
-							<!-- The notification container -->
-						<div class="notification-container-wrapper">
-							<div class="notification-container">
-								<a href="#">
-									<div>
-										<i class="fa fa-users text-warning"></i>
-										20 new members joined  
-									</div>
-								</a>
-							</div>
+                            <li class="divider" role="separator"></li>
+                            <div class="text-center message-see-all"><a href="#/mail">See All Messages</a></div>
+                        </ul><!--end Message Menu-->
+                    </li> <!--end Message-->
 
-							<li class="divider" role="separator"></li>
-							<div class="notification-container">
-								<a href="#">
-									<div>
-										<i class="fa fa-users text-warning"></i>
-										20 new members joined  
-									</div>
-								</a>
-							</div>
+                    <!-- Notification Menu -->
+                    <li class="dropdown notification-menu">
+                        <a href="" class="dropdown-toggle" data-toggle="dropdown" data-target="notification-dropdown">
+                            <i class="fa fa-bell-o"></i>
+                            <span class="label label-warning">12</span>
+                        </a>
+                        <!-- Notification Drop-Down -->
+                        <ul class="dropdown-menu" id="notification-dropdown">
+                            <div class="header">You have 12 notifications</div>
+                            <li class="divider" role="separator"></li>
+                            <!-- The notification container -->
+                            <div class="notification-container-wrapper">
+                                <div class="notification-container">
+                                    <a href="#/users">
+                                        <div>
+                                            <i class="fa fa-users text-warning"></i>
+                                            20 new members joined
+                                        </div>
+                                    </a>
+                                </div>
 
-							<li class="divider" role="separator"></li>
-							<div class="notification-container">
-								<a href="#">
-									<div>
-										<i class="fa fa-users text-warning"></i>
-										20 new members joined  
-									</div>
-								</a>
-							</div>
+                                <li class="divider" role="separator"></li>
+                                <div class="notification-container">
+                                    <a href="#/users">
+                                        <div>
+                                            <i class="fa fa-users text-warning"></i>
+                                            20 new members joined
+                                        </div>
+                                    </a>
+                                </div>
 
-							<li class="divider" role="separator"></li>
-							<div class="notification-container">
-								<a href="#">
-									<div>
-										<i class="fa fa-users text-warning"></i>
-										20 new members joined  
-									</div>
-								</a>
-							</div>
-						</div>
-						
+                                <li class="divider" role="separator"></li>
+                                <div class="notification-container">
+                                    <a href="#/users">
+                                        <div>
+                                            <i class="fa fa-users text-warning"></i>
+                                            20 new members joined
+                                        </div>
+                                    </a>
+                                </div>
 
-						<li class="divider" role="separator"></li>
-						<div class="text-center notification-view-all">
-							<a href="#">View All</a>
-						</div>
-					</ul><!--end Notification Menu-->
-				</li> <!--end Notification-->
+                                <li class="divider" role="separator"></li>
+                                <div class="notification-container">
+                                    <a href="#/users">
+                                        <div>
+                                            <i class="fa fa-users text-warning"></i>
+                                            20 new members joined
+                                        </div>
+                                    </a>
+                                </div>
+                            </div>
 
-				<!-- Tasks Menu -->
-				<li class="dropdown task-menu">
-					<a href="#" class="dropdown-toggle" data-toggle="dropdown" data-target="task-dropdown">
-						<i class="fa fa-flag-o"></i>
-						<span class="label label-danger">7</span>
-					</a>
-					<!-- Task Drop-Down -->
-					<ul class="dropdown-menu" id="task-dropdown">
-						<div class="header">You have 7 tasks</div>
-						<li class="divider" role="separator"></li>	
-							<!-- The notification container -->
-						<div class="task-container-wrapper">
-							<div class="task-container">
-								<a href="#">
-									<div>
-										<i class="fa fa-plus text-danger"></i>
-										Create a new database  
-									</div>
-								</a>
-							</div>
 
-							<li class="divider" role="separator"></li>
-							<div class="task-container">
-								<a href="#">
-									<div>
-										<i class="fa fa-plus text-danger"></i>
-										Create a new database  
-									</div>
-								</a>
-							</div>
+                            <li class="divider" role="separator"></li>
+                            <div class="text-center notification-view-all">
+                                <a href="#/users">View All</a>
+                            </div>
+                        </ul><!--end Notification Menu-->
+                    </li> <!--end Notification-->
 
-							<li class="divider" role="separator"></li>
-							<div class="task-container">
-								<a href="#">
-									<div>
-										<i class="fa fa-plus text-danger"></i>
-										Create a new database  
-									</div>
-								</a>
-							</div>
+                    <!-- Tasks Menu -->
+                    <li class="dropdown task-menu">
+                        <a href="" class="dropdown-toggle" data-toggle="dropdown" data-target="task-dropdown">
+                            <i class="fa fa-flag-o"></i>
+                            <span class="label label-danger">7</span>
+                        </a>
+                        <!-- Task Drop-Down -->
+                        <ul class="dropdown-menu" id="task-dropdown">
+                            <div class="header">You have 7 tasks</div>
+                            <li class="divider" role="separator"></li>
+                            <!-- The notification container -->
+                            <div class="task-container-wrapper">
+                                <div class="task-container">
+                                    <a href="#">
+                                        <div>
+                                            <i class="fa fa-plus text-danger"></i>
+                                            Create a new database
+                                        </div>
+                                    </a>
+                                </div>
 
-							<li class="divider" role="separator"></li>
-							<div class="task-container">
-								<a href="#">
-									<div>
-										<i class="fa fa-plus text-danger"></i>
-										Create a new database  
-									</div>
-								</a>
-							</div>
-						</div>
-						
-						<li class="divider" role="separator"></li>
-						<div class="text-center task-view-all">
-							<a href="#">View all tasks</a>
-						</div>
-					</ul><!--end Task Menu-->
-				</li> <!--end Task-->
+                                <li class="divider" role="separator"></li>
+                                <div class="task-container">
+                                    <a href="#">
+                                        <div>
+                                            <i class="fa fa-plus text-danger"></i>
+                                            Create a new database
+                                        </div>
+                                    </a>
+                                </div>
 
-				<!-- User Account Menu -->
-				<li class="dropdown">
-					<a href="#" class="dropdown-toggle" data-toggle="dropdown" data-target="user-dropdown">
-						<!-- <img src="img/team2_32.jpg" class="user-image img-circle" alt="user-image"> -->
-						<span class="">JOHN DOE</span>
-					</a>
+                                <li class="divider" role="separator"></li>
+                                <div class="task-container">
+                                    <a href="#">
+                                        <div>
+                                            <i class="fa fa-plus text-danger"></i>
+                                            Create a new database
+                                        </div>
+                                    </a>
+                                </div>
 
-					<!-- User dropdown -->
-					<ul class="dropdown-menu user-menu">
-						<!-- User Image -->
-						<div class="user-header">
-							<li class="text-center">
-								<img src="img/team2_64.jpg" alt="User Image" class="img-circle">
-								<p>John Doe - Web Developer <small>Member since Nov. 2012</small></p>
-							</li>
-						</div>
-						
-						<!-- User Body -->
-						<div class="user-body">
-							<div class="pull-left"><a href="#" class="btn btn-default btn-flat">Profile</a></div>
-							<div class="pull-right"><a href="#" class="btn btn-default btn-flat">Sign out</a></div>
-						</div>
-	     	</ul>
-	    </div><!-- /.navbar-collapse -->
-	  </div><!-- /.container-fluid -->
-	</nav>
-	
-	<!-- Main Container -->
-	<div class="main-wrapper">
-		<!-- Sidebar -->
-		<div class="side-bar">
-		<!-- sidebar user panel -->
-			<div class="side-bar-inner-wrapper">
-				<div class="user-panel clearfix">
-					<div class="pull-left image">
-						<img src="img/team2_64.jpg" alt="User Image" class="img-circle">
-					</div>
-					<div class="pull-left info">
-						<h4>John Doe</h4>
-						<!-- status -->
-						<a><i class="fa fa-circle text-success"> Online</i></a>
-					</div>
-				</div>
+                                <li class="divider" role="separator"></li>
+                                <div class="task-container">
+                                    <a href="#">
+                                        <div>
+                                            <i class="fa fa-plus text-danger"></i>
+                                            Create a new database
+                                        </div>
+                                    </a>
+                                </div>
+                            </div>
 
-				<!-- Search Form -->
-				<div class="sidebar-form clearfix">
-					<form action="#" method="get" class="search-form">
-						<div class="input-group">
-							<input type="text" name="search_input" class="form-control" placeholder="Search">
-							<span class="input-group-btn">
-								<button type="submit" name="search" id="search-btn" class="btn btn-flat" ><i class="fa fa-search"></i></button>
-							</span>
-						</div>
-					</form>
-				</div>
-				<ul class="side-links">
-					<li><a href="#" class="active"><i class="fa fa-dashboard"></i>&nbsp;Dashboard</a></li>
-				  	<li><a href="#" class=""><i class="fa fa-users"></i>&nbsp;Users</a></li>
-				  	<li><a href="#" class=""><i class="fa fa-envelope"></i>&nbsp;MailBox</a></li>	
-				</ul>
-			</div><!--end side-bar-inner-wrapper-->
-		</div>
-			
-		<!-- Content Container -->
-		<div class="content">
-			<h4><i class="fa fa-dashboard"></i>&nbsp;Dashboard</h4>
-			<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Neque sint ipsum harum obcaecati eligendi, ipsam voluptas ducimus nobis dignissimos. Molestiae corporis aliquid molestias dicta, eligendi quod ipsa, odit iure est illo sint ut at commodi in minima rerum fugit nam.</p>
-		</div>
-	</div>
+                            <li class="divider" role="separator"></li>
+                            <div class="text-center task-view-all">
+                                <a href="#/tasks">View all tasks</a>
+                            </div>
+                        </ul><!--end Task Menu-->
+                    </li> <!--end Task-->
 
-	<script type="text/javascript" src="js/jquery-3.0.0.min.js"></script>
-	<script type="text/javascript" src="js/bootstrap.min.js"></script>
-	<script type="text/javascript" src="js/script.js"></script>
+                    <!-- User Account Menu -->
+                    <li class="dropdown">
+                        <a href="" class="dropdown-toggle" data-toggle="dropdown" data-target="user-dropdown">
+                            <!-- <img src="img/team2_32.jpg" class="user-image img-circle" alt="user-image"> -->
+                            <span class="">JOHN DOE</span>
+                        </a>
+
+                        <!-- User dropdown -->
+                        <ul class="dropdown-menu user-menu">
+                            <!-- User Image -->
+                            <div class="user-header">
+                                <li class="text-center">
+                                    <img src="img/team2_64.jpg" alt="User Image" class="img-circle">
+                                    <p>John Doe - Web Developer <small>Member since Nov. 2012</small></p>
+                                </li>
+                            </div>
+
+                            <!-- User Body -->
+                            <div class="user-body">
+                                <div class="pull-left"><a href="" class="btn btn-default btn-flat">Profile</a></div>
+                                <div class="pull-right"><a href="login.html" class="btn btn-default btn-flat">Sign out</a></div>
+                            </div>
+                        </ul>
+                    </li>
+                </ul>
+            </div><!-- /.navbar-collapse -->
+        </div><!-- /.container-fluid -->
+    </nav>
+
+
+    <!-- Main Container -->
+    <div class="main-wrapper">
+        <!-- Sidebar -->
+        <div ng-include="'templates/sidebar.html'"></div>
+
+        <!-- Content Container -->
+        <div ng-view></div>
+    </div>
+
+	<script type="text/javascript" src="lib/jquery-3.0.0.min.js"></script>
+	<script type="text/javascript" src="lib/angular-1.5.8.js"></script>
+	<script type="text/javascript" src="lib/angular-route.min.js"></script>
+	<script type="text/javascript" src="lib/bootstrap.min.js"></script>
+	<script type="text/javascript" src="js/app.js"></script>
+    <script type="text/javascript" src="js/controllers.js"></script>
+	<script type="text/javascript" src="js/route.js"></script>
 </body>
 </html>

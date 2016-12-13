@@ -1,2 +1,2 @@
 # AdminPage
-An AdminPage template that has the necessary contents an admin should see so as to monitor a website.
+An AdminPage template that can be incorporated into any website for the monitoring and management of a website.

@@ -18,27 +18,70 @@ $( document ).ready(function() {
 	
 });
 
-var adminPanel=angular.module('adminPanel', ['ngRoute']);
+var adminPanel=angular.module('adminPanel', ['ui.router','ngCookies','ngAnimate']);
 
+adminPanel.config(function($stateProvider, $urlRouterProvider) {
 
-adminPanel.factory('appFactory',function ($http) {
-	var factory={};
-	var selectedUser={};
+    $urlRouterProvider.otherwise('/home/dashboard');
 
-	factory.getUsers=function () {
-		return $http.get('users.json');
-	};
+    $stateProvider
+        .state('login',{
+            url:'/login',
+            templateUrl:'templates/login.html',
+            controller: "loginCtrl"
+        })
 
-	factory.setUser=function (user) {
-		selectedUser=user;
-	};
+        .state('home', {
+            url: '/home',
+            views: {
+                '': { templateUrl: 'templates/home.html' },
+                '@home': {
+                    templateUrl: 'templates/dashboard.html'
+                },
+                'nav@home': {
+                    templateUrl: 'templates/nav.html'
+                },
+                'sidebar@home': {
+                    templateUrl: 'templates/sidebar.html'
+                }
+            },
+            onEnter:function ($state,$cookies) {
+                if ($cookies.get('loggedIn')==null){
+                    $state.go('login');
+                }
+            },
+            controller:'homeController'
+        })
 
-	factory.getUser=function () {
-		return selectedUser;
-	};
+        .state('home.dashboard', {
+            url: '/dashboard',
+            templateUrl: 'templates/dashboard.html'
+        })
 
-	return factory;
+        .state('home.users', {
+            url: '/users',
+            templateUrl: 'templates/users.html',
+            // views:{
+            //     '':{templateUrl: 'templates/users-list.html'},
+            //     '/user-details':{templateUrl: 'templates/user-details.html'}
+            // },
+            controller: 'userCtrl'
+        })
+
+        .state('home.details', {
+            url: '/users/user-details/:id',
+            templateUrl: 'templates/user-details.html',
+            controller: 'userCtrl'
+        })
+
+        .state('home.mail', {
+            url: '/mail',
+            templateUrl: 'templates/mail.html'
+        })
+
+        .state('home.tasks', {
+            url: '/tasks',
+            templateUrl: 'templates/tasks.html'
+        });
 });
-
-
 

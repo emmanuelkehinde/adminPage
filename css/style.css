@@ -395,6 +395,57 @@
 
 
 
+/*ngAnimate*/
+.animate.ng-enter, .animate.ng-leave{
+	-webkit-transition: linear 400ms;
+	-moz-transition: linear 400ms;
+	-ms-transition: linear 400ms;
+	-o-transition: linear 400ms;
+	transition: linear 400ms;
+}
+
+.animate.ng-leave{
+	opacity: 1;
+}
+
+.animate.ng-leave.ng-leave-active{
+    opacity: 0;
+}
+
+.animate.ng-enter{
+    opacity: 0;
+}
+
+.animate.ng-enter.ng-enter-active{
+    opacity: 1;
+}
+
+/*UI-VIEW*/
+/*[ui-view].ng-enter, [ui-view].ng-leave{*/
+	/*-webkit-transition: linear 1s;*/
+	/*-moz-transition: linear 1s;*/
+	/*-ms-transition: linear 1s;*/
+	/*-o-transition: linear 1s;*/
+	/*transition: linear 1s;*/
+/*}*/
+
+/*[ui-view].ng-leave{*/
+	/*opacity: 1;*/
+/*}*/
+
+/*[ui-view].ng-leave.ng-leave-active{*/
+	/*opacity: 0;*/
+/*}*/
+
+/*[ui-view].ng-enter{*/
+	/*opacity: 0;*/
+/*}*/
+
+/*[ui-view].ng-enter.ng-enter-active{*/
+	/*opacity: 1;*/
+/*}*/
+
+
 
 
 

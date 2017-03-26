@@ -1,0 +1,34 @@
+<div class="container" ng-controller="loginCtrl">
+    <div class="row">
+        <div class="col-sm-6 col-sm-offset-3">
+            <div class="page-header text-center">
+                <h2>Login to the AdminPage</h2>
+            </div>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-sm-4 col-sm-offset-4">
+            <form ng-submit="login()">
+
+                <div class="form-group">
+                    <label for="userName" class="sr-only">Username</label>
+                    <input type="text" ng-model="userName" id="userName" class="form-control" placeholder="Username">
+                </div>
+                <div class="form-group">
+                    <label for="userPass" class="sr-only">Password</label>
+                    <input type="password" ng-model="userPass" id="userPass" class="form-control" placeholder="Password">
+                </div>
+
+                <button type="submit" name="login" class="btn btn-primary">Login</button>
+            </form>
+            <br>
+            <div ng-if="errorMsg" class="alert alert-danger text-xs-left" role="alert">
+                <span class="fa fa-exclamation-triangle" aria-hidden="true"></span>
+                <span class="sr-only">Error:</span>
+                {{errorMsg}}
+                <button type="button" class="close pull-right" aria-label="Close" ng-click="closeAlert()" data-dismiss="alert"><span aria-hidden="true">&times;</span></button>
+            </div>
+
+        </div>
+    </div>
+</div>

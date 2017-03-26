@@ -1,37 +1,38 @@
+
 <div class="content container-fluid user-content" ng-controller="userCtrl">
 	<div class="panel panel-default">
 		<div class="panel-heading clearfix">
-			<span>
-				<!--<h3 class="panel-title pull-left"><i class="fa fa-users"></i>&nbsp;List of registered users</h3>-->
-                <div class="pull-left">
-					<button class="btn btn-success"><i class="fa fa-plus-circle"></i> Add User</button>
-				</div>
+                <span>
+                    <!--<h3 class="panel-title pull-left"><i class="fa fa-users"></i>&nbsp;List of registered users</h3>-->
+                    <div class="pull-left">
+                        <button class="btn btn-success"><i class="fa fa-plus-circle"></i> Add User</button>
+                    </div>
 
-                <div class="input-group pull-right" >
-					<input type="text" ng-model="nameFilter" name="user-search" class="form-control user-search" placeholder="Search for a user">
-				</div>
-			</span>
+                    <div class="input-group pull-right" >
+                        <input type="text" ng-model="nameFilter" name="user-search" class="form-control user-search" placeholder="Search for a user">
+                    </div>
+                </span>
 		</div>
-	 	<div class="panel-body">
+		<div class="panel-body">
 			<!--Loading sign...-->
 			<div ng-if="userFetched==false">
 				<h1 class="text-center"><i class="fa fa-2x fa-spinner fa-spin"></i></h1>
 			</div>
 
-		  	<div class="row">
-			  <div class="col-sm-3 col-md-2 col-xs-6" ng-repeat="user in users|limitTo: 18|filter:nameFilter as results">
-			    <div>
-					<a href="" ng-click="viewDetails(user)">
-						<img class="img-circle" ng-src="{{user.profile_pics}}" alt="user">
-			      		<p>{{user.name}}</p>
-					</a>
-			      <small>{{user.title}}</small>
-                    <div>
-                        <button class="btn btn-sm fa fa-trash-o colr-red" data-toggle="tooltip" data-placement="left" title="Delete User" ng-click="deleteUser(user)"></button>
-                        <button class="btn btn-sm fa fa-edit colr-blue" data-toggle="tooltip" data-placement="right" title="Edit User" ng-click="editUser(user)"></button>
-                    </div>
-			    </div>
-			  </div>
+			<div class="row">
+				<div class="col-sm-3 col-md-2 col-xs-6 animate" ng-repeat="user in users|limitTo: 18|filter:nameFilter as results">
+					<div>
+						<a ui-sref="^.details({id: user.id})">
+							<img class="img-circle" ng-src="{{user.profile_pics}}" alt="user">
+							<p>{{user.name}}</p>
+						</a>
+						<small>{{user.title}}</small>
+						<div>
+							<button class="btn btn-sm fa fa-trash-o colr-red" data-toggle="tooltip" data-placement="left" title="Delete User" ng-click="deleteUser(user)"></button>
+							<button class="btn btn-sm fa fa-edit colr-blue" data-toggle="tooltip" data-placement="right" title="Edit User" ng-click="editUser(user)"></button>
+						</div>
+					</div>
+				</div>
 			</div>
 
 			<div ng-if="results.length==0">
@@ -40,19 +41,16 @@
 
 
 			<nav>
-			 <!--  <ul class="pagination">
-			    <li class="disabled"><a href="" aria-label="Previous"><span aria-hidden="true">&laquo;</span></a></li>
-			    <li class="active"><a href="">1 <span class="sr-only">(current)</span></a></li>
-			    ...
-			  </ul> -->
-			  <ul class="pager">
-			    <li><a href="" class="next_previous">Previous</a></li>
-			    <li><a href="" class="next_previous">Next</a></li>
-			  </ul>
+				<!--  <ul class="pagination">
+                   <li class="disabled"><a href="" aria-label="Previous"><span aria-hidden="true">&laquo;</span></a></li>
+                   <li class="active"><a href="">1 <span class="sr-only">(current)</span></a></li>
+                   ...
+                 </ul> -->
+				<ul class="pager">
+					<li><a href="" class="next_previous">Previous</a></li>
+					<li><a href="" class="next_previous">Next</a></li>
+				</ul>
 			</nav>
-	  	</div><!--End Body-->
+		</div><!--End Body-->
 	</div>
-
-	
-	
 </div>

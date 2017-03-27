@@ -20,11 +20,12 @@ with all working fine with their routing.
 
 However you need to be logged-in to view all these (Of Course as an Admin!).
 Login Credentials are:
-**Username- admin 
 
-**Password- admin
+*Username- admin 
 
-Cheers! :)
+*Password- admin
+
+Cheers!  :)
 
 
 ## Contributing

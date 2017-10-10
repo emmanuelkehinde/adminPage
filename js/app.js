@@ -71,7 +71,7 @@ adminPanel.config(function($stateProvider, $urlRouterProvider) {
         .state('home.details', {
             url: '/users/user-details/:id',
             templateUrl: 'templates/user-details.html',
-            controller: 'userCtrl'
+            controller: 'userDetailsCtrl'
         })
 
         .state('home.mail', {

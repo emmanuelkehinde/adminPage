@@ -52,6 +52,10 @@ adminPanel.controller('userCtrl', function ($scope,$rootScope, AppFactory) {
 
     };//deleteUser
 
+    $scope.saveUser=function (user) {
+        AppFactory.setUser(user);
+    };
+
 });
 
 adminPanel.controller('userDetailsCtrl', function ($scope, AppFactory) {
